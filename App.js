@@ -4,6 +4,12 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Slider from '@react-native-community/slider';
 
 export default function App(){
+
+  function generatePass() {
+    alert('Clicou no botão')
+  }
+
+
   return(
     <View style={styles.container}>
       <Image
@@ -22,7 +28,7 @@ export default function App(){
         />
       </View>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={generatePass}>
         <Text style={styles.buttonText}>Gerar senha</Text>
       </TouchableOpacity>
 
@@ -64,5 +70,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 7,
     marginBottom: 25,
+  },
+  buttonText:{
+    fontSize: 20,
+    color: '#FFF',
+    fontWeight: 'bold'
+  },
+  password:{
+    padding: 10,
+    textAlign: 'center',
+    fontSize: 20
   }
 });
