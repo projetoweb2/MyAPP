@@ -22,6 +22,10 @@ export default function App(){
     setPassword(pass);
   }
 
+  function copyPass(){
+    alert('Testa')
+  }
+
 
   return(
     <View style={styles.container}>
@@ -47,9 +51,15 @@ export default function App(){
         <Text style={styles.buttonText}>Gerar senha</Text>
       </TouchableOpacity>
 
-      <View style={styles.area}>
-        <Text style={styles.password}>{password}</Text>
-      </View>
+
+
+      {password !== '' && (
+        <View style={styles.area}>
+          <Text style={styles.password} onLongPress={copyPass}> {password} </Text>
+        </View>
+        
+      )}
+      
     </View>
 
   )
