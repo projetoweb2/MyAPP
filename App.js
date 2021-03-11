@@ -22,9 +22,13 @@ export default function App(){
         />
       </View>
 
-      <TouchableOpacity>
-        <Text>Gerar senha</Text>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Gerar senha</Text>
       </TouchableOpacity>
+
+      <View style={styles.area}>
+        <Text style={styles.password}>123123123</Text>
+      </View>
     </View>
 
   )
@@ -49,7 +53,16 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 15,
     backgroundColor: '#FFF',
-    width: '90%',
+    width: '80%',
     borderRadius: 7
+  },
+  button:{
+    backgroundColor: '#FFA200',
+    width: '80%',
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 7,
+    marginBottom: 25,
   }
 });
