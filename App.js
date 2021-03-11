@@ -3,13 +3,23 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 import Slider from '@react-native-community/slider';
 
+let charset = 'abcdefghijlmnopqrstuvxzABCDEFGHIJLMNOPQRSTUVXZ0123456789';
+
 export default function App(){
-  const [password, setPassword] = useState('000000');
+  const [password, setPassword] = useState('');
   //Cria um array e passa dois parâmetros, nome do estado e a função pra trocar o valor desse estado.
   //Dentro do parênteses é o valor que esse estado vai começar
 
+  const [size, setSize] = useState(10)
+
   function generatePass() {
-    alert('Clicou no botão')
+    //setPassword('Senha teste')
+    let pass = '';
+    for(let i = 0, n = charset.length; i < size; i++){
+      pass += charset.charAt(Math.floor(Math.random() * n))
+    }
+
+    setPassword(pass);
   }
 
 
@@ -20,7 +30,7 @@ export default function App(){
       style={styles.logo}
       />
 
-      <Text style={styles.title}>12 Caracteres</Text>
+      <Text style={styles.title}> {size} Caracteres</Text>
       <View style={styles.area}>
         <Slider
            style={{ height: 50 }}
@@ -28,6 +38,8 @@ export default function App(){
            maximumValue={15}
            minimumTrackTintColor="#FF0000"
            maximumTrackTintColor="#000"
+           value={size}
+           onValueChange={ (valor) => setSize(valor.toFixed(0))}
         />
       </View>
 
