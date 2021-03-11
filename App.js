@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 import Slider from '@react-native-community/slider';
+import Clipboard from 'expo-clipboard';
 
 let charset = 'abcdefghijlmnopqrstuvxzABCDEFGHIJLMNOPQRSTUVXZ0123456789';
 
@@ -23,7 +24,8 @@ export default function App(){
   }
 
   function copyPass(){
-    alert('Testa')
+    Clipboard.setString(password);
+    alert('Senha copiada com sucesso!')
   }
 
 
