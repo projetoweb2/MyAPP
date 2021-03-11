@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 import Slider from '@react-native-community/slider';
 
 export default function App(){
+  const [password, setPassword] = useState('000000');
+  //Cria um array e passa dois parâmetros, nome do estado e a função pra trocar o valor desse estado.
+  //Dentro do parênteses é o valor que esse estado vai começar
 
   function generatePass() {
     alert('Clicou no botão')
@@ -33,7 +36,7 @@ export default function App(){
       </TouchableOpacity>
 
       <View style={styles.area}>
-        <Text style={styles.password}>123123123</Text>
+        <Text style={styles.password}>{password}</Text>
       </View>
     </View>
 
